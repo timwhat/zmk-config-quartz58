@@ -44,29 +44,5 @@ endchoice
 
 endif # LVGL
 
-if ZMK_BACKLIGHT
-
-config PWM
-    default y
-
-endif # ZMK_BACKLIGHT
-
-if ZMK_RGB_UNDERGLOW
-
-config SPI
-    default y
-
-config WS2812_STRIP
-    default y
-
-endif # ZMK_RGB_UNDERGLOW
-
-endif
-
-config LED_PWM
-    default y
-
-endif # ZMK_BACKLIGHT
-
 endif
 
