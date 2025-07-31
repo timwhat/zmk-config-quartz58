@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "quartz58.dtsi"
 / {
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
@@ -28,5 +29,18 @@
             , <&gpio1 6  GPIO_ACTIVE_HIGH>
             , <&gpio0 2  GPIO_ACTIVE_HIGH>
         ;
+    };
+
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
     };
 };

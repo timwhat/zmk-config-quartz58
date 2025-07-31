@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "quartz58.dtsi"
 
 / {
     kscan0: kscan {
