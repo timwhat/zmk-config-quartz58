@@ -7,6 +7,9 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_POINTING
+    default y
+
 endif
 
 if SHIELD_QUARTZ58_LEFT || SHIELD_QUARTZ58_RIGHT
@@ -40,6 +43,30 @@ choice LV_COLOR_DEPTH
 endchoice
 
 endif # LVGL
+
+if ZMK_BACKLIGHT
+
+config PWM
+    default y
+
+endif # ZMK_BACKLIGHT
+
+if ZMK_RGB_UNDERGLOW
+
+config SPI
+    default y
+
+config WS2812_STRIP
+    default y
+
+endif # ZMK_RGB_UNDERGLOW
+
+endif
+
+config LED_PWM
+    default y
+
+endif # ZMK_BACKLIGHT
 
 endif
 
