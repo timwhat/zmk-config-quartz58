@@ -46,7 +46,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
-        label = "WS2812";
 
         /* SPI */
         reg = <0>; /* ignored, but necessary for SPI bindings */
@@ -81,9 +80,10 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
         inversion-on;
         prechargep = <0x22>;
     };
-
-    trackpad: tps65 {
-        status = "okay";
-        reg = <0>;
+/*
+    trackpad: tps65@2a {
+        status = "disabled";
+        reg = <0x2a>;
     };
-};
+#};
+*/
