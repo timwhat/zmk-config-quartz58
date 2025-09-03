@@ -1,0 +1,15 @@
+file_format: "1"
+id: quartz58
+name: quartz58
+type: shield # change later prob
+features:
+  - keys
+  - display
+  - encoder
+  - pointing_device
+outputs:
+  - usb
+  - ble
+siblings:
+  - quartz58_left
+  - quartz58_right
