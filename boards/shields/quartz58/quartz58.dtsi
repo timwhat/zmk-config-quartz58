@@ -5,7 +5,6 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/led/led.h>
 #include "quartz58-pinctrl.dtsi"
 
 / {
@@ -35,20 +34,12 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
     };
 };
 
-&spi3 {
-    compatible = "nordic,nrf-spim";
-    status = "okay";
-
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-1 = <&spi3_sleep>;
-    pinctrl-names = "default", "sleep";
-};
-
 &pro_micro_i2c {
     compatible = "nordic,nrf-twim";
     status = "disabled";  // Disabled for nice view
     clock-frequency = <I2C_BITRATE_FAST>;
 
+    /*
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
@@ -64,6 +55,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
         inversion-on;
         prechargep = <0x22>;
     };
+    */
 /*
     trackpad: tps65@2a {
         status = "disabled";
