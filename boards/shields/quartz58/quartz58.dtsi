@@ -34,15 +34,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
     };
 };
 
-&nice_view_spi {
-  cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-};
-
 &pro_micro_i2c {
-    compatible = "nordic,nrf-twim";
-    status = "disabled";  // Disabled for nice view
-    clock-frequency = <I2C_BITRATE_FAST>;
-
+    status = "okay";
     /*
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
