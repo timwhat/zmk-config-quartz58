@@ -45,7 +45,7 @@ nice_view_spi: &spi1 {
     pinctrl-names = "default", "sleep";
     
     // CS pin D4 (P0.5) - default nice!view CS pin
-    cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
+    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
 };
 
 &pro_micro_i2c {
