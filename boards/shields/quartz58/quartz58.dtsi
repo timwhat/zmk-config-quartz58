@@ -35,7 +35,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
     };
 };
 
-// Custom nice!view SPI bus (not using I2C pins)
+// Custom nice!view SPI bus using default nice!view pins
 nice_view_spi: &spi1 {
     compatible = "nordic,nrf-spim";
     status = "okay";
@@ -44,8 +44,8 @@ nice_view_spi: &spi1 {
     pinctrl-1 = <&spi1_sleep>;
     pinctrl-names = "default", "sleep";
     
-    // Adjust CS pin to match your hardware
-    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
+    // CS pin D4 (P0.5) - default nice!view CS pin
+    cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
 };
 
 &pro_micro_i2c {
