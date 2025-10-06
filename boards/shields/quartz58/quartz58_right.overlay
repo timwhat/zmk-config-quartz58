@@ -26,6 +26,10 @@
     ;
 };
 
+&default_transform {
+    col-offset = <7>;
+};
+
 / {
 
     // TPS65 trackpad input listener (right side only)
