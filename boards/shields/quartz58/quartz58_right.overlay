@@ -12,6 +12,7 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
+        col-offset = <7>;  // Right side starts at column 7
         
         row-gpios
             = <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -22,12 +23,12 @@
         ;
 
         col-gpios
-            = <&gpio0 9  GPIO_ACTIVE_HIGH>
-            , <&gpio0 24 GPIO_ACTIVE_HIGH>
-            , <&gpio1 0  GPIO_ACTIVE_HIGH>
-            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            = <&gpio1 6  GPIO_ACTIVE_HIGH>
             , <&gpio1 4  GPIO_ACTIVE_HIGH>
-            , <&gpio1 6  GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 0  GPIO_ACTIVE_HIGH>
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9  GPIO_ACTIVE_HIGH>
         ;
     };
 
@@ -77,7 +78,7 @@
 };
 
 // TPS65 trackpad I2C configuration (right side only)
-&pro_micro_i2c {
+&arduino_i2c {
     status = "okay";
     tps65: iqs5xx@74 {
         status = "okay";
