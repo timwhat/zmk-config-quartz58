@@ -35,6 +35,13 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
     };
 };
 
+kscan0: kscan {
+    compatible = "zmk,kscan-gpio-matrix";
+    wakeup-source;
+    diode-direction = "col2row";
+    // GPIO pins will be defined in left/right overlays
+};
+
 // Custom nice!view SPI bus - required by nice_view_gem shield
 nice_view_spi: &spi1 {
     compatible = "nordic,nrf-spim";
