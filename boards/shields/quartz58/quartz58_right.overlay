@@ -26,6 +26,10 @@
     ;
 };
 
+&nice_view_spi {
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+};
+
 &default_transform {
     col-offset = <7>;
 };

@@ -40,16 +40,3 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
         // GPIO pins will be defined in left/right overlays
     };
 };
-
-// Custom nice!view SPI bus - required by nice_view_gem shield
-nice_view_spi: &spi1 {
-    compatible = "nordic,nrf-spim";
-    status = "okay";
-    
-    pinctrl-0 = <&spi1_default>;
-    pinctrl-1 = <&spi1_sleep>;
-    pinctrl-names = "default", "sleep";
-    
-    // CS pin D4 (P0.5) - adjust to match your hardware
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-};
