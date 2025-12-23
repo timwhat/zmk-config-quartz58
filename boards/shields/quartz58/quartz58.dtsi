@@ -52,5 +52,5 @@ nice_view_spi: &spi1 {
     pinctrl-names = "default", "sleep";
     
     // CS pin D4 (P0.5) - adjust to match your hardware
-    cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 };
