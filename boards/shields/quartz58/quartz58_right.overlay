@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
 #include "quartz58.dtsi"
 
 &kscan0 {
@@ -111,14 +112,10 @@
         status = "okay";
         compatible = "azoteq,iqs5xx";
         reg = <0x74>;
-
+        
         reset-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
         rdy-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
 
-        /*
-         * Potentially non-exhaustive list of configuration options.
-         * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
-         */
         one-finger-tap;
         press-and-hold;
         press-and-hold-time = <250>;
@@ -132,5 +129,12 @@
         stationary-threshold = <5>;
 
         switch-xy;
+        
+        input-codes-override {
+            default-mode {
+                xy-move = <INPUT_REL_X INPUT_REL_Y>;
+                xy-scroll = <INPUT_REL_HWHEEL INPUT_REL_WHEEL>;
+            };
+        };
     };
 };
