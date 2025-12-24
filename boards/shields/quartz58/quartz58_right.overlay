@@ -123,7 +123,10 @@
 
         scroll;
         natural-scroll-y;
+        natural-scroll-x;
 
+        /* Invert X axis for pointer movement while preserving scroll X */
+        flip-x;
 
         bottom-beta = <5>;
         stationary-threshold = <5>;
