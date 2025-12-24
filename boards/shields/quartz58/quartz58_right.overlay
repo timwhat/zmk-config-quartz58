@@ -82,8 +82,11 @@
 };
 
 // TPS65 trackpad I2C configuration (right side only)
-&pro_micro_i2c {
+// Using &pro_micro_serial (I2C1) to avoid peripheral conflict with nice_view SPI0
+&pro_micro_serial {
     status = "okay";
+    compatible = "nordic,nrf-twi";
+    
     tps65: iqs5xx@74 {
         status = "okay";
         compatible = "azoteq,iqs5xx";
