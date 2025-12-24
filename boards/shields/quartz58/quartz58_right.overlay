@@ -26,9 +26,10 @@
     ;
 };
 
-&nice_view_spi {
-    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-};
+// Disable nice_view to avoid peripheral conflict with trackpad I2C
+// &nice_view_spi {
+//     cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+// };
 
 &default_transform {
     col-offset = <7>;
@@ -82,10 +83,8 @@
 };
 
 // TPS65 trackpad I2C configuration (right side only)
-// Using &pro_micro_serial (I2C1) to avoid peripheral conflict with nice_view SPI0
-&pro_micro_serial {
+&pro_micro_i2c {
     status = "okay";
-    compatible = "nordic,nrf-twi";
     
     tps65: iqs5xx@74 {
         status = "okay";
