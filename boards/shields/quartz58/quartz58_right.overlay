@@ -123,17 +123,9 @@
 
         scroll;
         natural-scroll-y;
-        natural-scroll-x;
+
 
         bottom-beta = <5>;
         stationary-threshold = <5>;
-
-        
-        input-codes-override {
-            default-mode {
-                xy-move = <INPUT_REL_X INPUT_REL_Y>;
-                xy-scroll = <INPUT_REL_HWHEEL INPUT_REL_WHEEL>;
-            };
-        };
     };
 };
