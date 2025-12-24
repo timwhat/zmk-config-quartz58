@@ -6,12 +6,6 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config ZMK_DISPLAY
-    default y
-    
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
-
 #config ZMK_POINTING
 #    default y
 

@@ -26,10 +26,9 @@
     ;
 };
 
-// Disable nice_view to avoid peripheral conflict with trackpad I2C
-// &nice_view_spi {
-//     cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-// };
+&nice_view_spi {
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+};
 
 &default_transform {
     col-offset = <7>;
@@ -82,9 +81,31 @@
 //     };
 };
 
-// TPS65 trackpad I2C configuration (right side only)
-&pro_micro_i2c {
+// Configure I2C1 on serial pins for trackpad
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 8)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 6)>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 8)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 6)>;
+            low-power-enable;
+        };
+    };
+};
+
+// TPS65 trackpad on I2C1 (serial pins)
+&i2c1 {
     status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
     
     tps65: iqs5xx@74 {
         status = "okay";
