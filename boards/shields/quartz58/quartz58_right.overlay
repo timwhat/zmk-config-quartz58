@@ -128,7 +128,8 @@
         bottom-beta = <5>;
         stationary-threshold = <5>;
 
-        switch-xy;
+        invert-x;
+        invert-y;
         
         input-codes-override {
             default-mode {
