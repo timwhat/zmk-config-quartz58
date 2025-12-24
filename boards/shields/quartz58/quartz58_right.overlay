@@ -128,7 +128,8 @@
         /* Invert X axis for pointer movement while preserving scroll X */
         flip-x;
 
-        bottom-beta = <5>;
-        stationary-threshold = <5>;
+        /* Increase responsiveness: less filtering, smaller movement threshold */
+        bottom-beta = <200>;
+        stationary-threshold = <2>;
     };
 };
