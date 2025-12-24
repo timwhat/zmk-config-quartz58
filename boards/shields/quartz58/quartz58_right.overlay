@@ -81,19 +81,19 @@
 //     };
 };
 
-// Configure I2C1 on serial pins for trackpad
+// Configure I2C1 on actual trackpad pins (P0.17=SDA, P0.20=SCL)
 &pinctrl {
     i2c1_default: i2c1_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 8)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 6)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
         };
     };
 
     i2c1_sleep: i2c1_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 8)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 6)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
             low-power-enable;
         };
     };
