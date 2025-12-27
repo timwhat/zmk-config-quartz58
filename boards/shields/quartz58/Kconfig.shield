@@ -3,7 +3,7 @@ config ZMK_STUDIO
     default n
 
 config SHIELD_QUARTZ58_LEFT
-    def_bool $(shields_list_contains, quartz58_left)
+    def_bool $(shields_list_contains,quartz58_left)
 
 config SHIELD_QUARTZ58_RIGHT
-    def_bool $(shields_list_contains, quartz58_right)
+    def_bool $(shields_list_contains,quartz58_right)
