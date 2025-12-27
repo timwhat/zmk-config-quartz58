@@ -1,0 +1,1 @@
+Pinned ZMK revision to v0.3.0 to satisfy zmk-nice-oled includes (zmk/split/central.h). If you switch modules, revert or update accordingly.
