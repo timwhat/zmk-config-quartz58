@@ -8,14 +8,17 @@ manifest:
       url-base: https://github.com/M165437
     - name: aym1607
       url-base: https://github.com/AYM1607
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: nice-view-gem
-      remote: m165437
+    # support nice_oled and nice_epaper
+    - name: zmk-nice-oled
+      remote: mctechnology17
       revision: main
     - name: zmk-driver-azoteq-iqs5xx
       remote: aym1607
