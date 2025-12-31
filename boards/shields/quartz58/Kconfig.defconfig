@@ -14,6 +14,7 @@ endif
 if SHIELD_QUARTZ58_RIGHT
 
 config IQS5XX
+    bool
     default y
 
 endif
