@@ -11,6 +11,13 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+if SHIELD_QUARTZ58_RIGHT
+
+config IQS5XX
+    default y
+
+endif
+
 if SHIELD_QUARTZ58_LEFT || SHIELD_QUARTZ58_RIGHT
 
 config ZMK_SPLIT
