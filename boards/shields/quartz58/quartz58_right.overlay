@@ -115,7 +115,6 @@
         
         reset-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>;
         rdy-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
-        init-priority = <80>;
 
         one-finger-tap;
         press-and-hold;
