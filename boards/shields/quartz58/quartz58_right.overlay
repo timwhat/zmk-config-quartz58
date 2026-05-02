@@ -129,8 +129,8 @@
         flip-y;
 
         /* Increase responsiveness: less filtering, smaller movement threshold */
-        bottom-beta = <200>;
-        stationary-threshold = <2>;
+        bottom-beta = <120>;
+        stationary-threshold = <1>;
     };
 };
 
