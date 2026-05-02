@@ -125,8 +125,8 @@
         natural-scroll-y;
         natural-scroll-x;
 
-        /* Invert X axis for pointer movement while preserving scroll X */
-        flip-x;
+        /* Invert Y axis for pointer movement while preserving scroll Y */
+        flip-y;
 
         /* Increase responsiveness: less filtering, smaller movement threshold */
         bottom-beta = <200>;
