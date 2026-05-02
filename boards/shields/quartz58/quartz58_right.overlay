@@ -37,11 +37,11 @@
 
 / {
 
-    // TPS65 trackpad input listener (right side only)
-    tps65_input: tps65_input {
-        compatible = "zmk,input-listener";
-        device = <&tps65>;
-    };
+    // // TPS65 trackpad input listener
+    // tps65_input: tps65_input {
+    //     compatible = "zmk,input-listener";
+    //     device = <&tps65>;
+    // };
     
 //     physical_layout0: physical_layout_0 {
 //         compatible = "zmk,physical-layout";
@@ -132,4 +132,8 @@
         bottom-beta = <200>;
         stationary-threshold = <2>;
     };
+};
+
+&tps65_split {
+    device = <&tps65>;
 };

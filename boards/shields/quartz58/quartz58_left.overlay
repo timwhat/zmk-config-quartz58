@@ -41,6 +41,11 @@
         sensors = <&left_encoder>;
         triggers-per-rotation = <20>;
     };
+
+    &tps65_input {
+        status = "okay";
+    };
+
 //  physical_layout0: physical_layout_0 {
 //         compatible = "zmk,physical-layout";
 //         display-name = "quartz58_left";

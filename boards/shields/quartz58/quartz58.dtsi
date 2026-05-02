@@ -39,4 +39,20 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(3,6)        RC(4,7) R
         diode-direction = "col2row";
         // GPIO pins will be defined in left/right overlays
     };
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        tps65_split: tps65_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    tps65_input: tps65_input {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&tps65_split>;
+    };
 };
