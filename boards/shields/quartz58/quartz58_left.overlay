@@ -5,6 +5,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
 #include "quartz58.dtsi"
 
 &kscan0 {
@@ -28,6 +29,14 @@
 };
 
 / {
+
+    trackpad_xy_scaler: trackpad_xy_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+        track-remainders;
+    };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
@@ -87,4 +96,5 @@
 
 &tps65_input {
     status = "okay";
+    input-processors = <&trackpad_xy_scaler 2 1>;
 };
