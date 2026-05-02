@@ -42,10 +42,6 @@
         triggers-per-rotation = <20>;
     };
 
-    &tps65_input {
-        status = "okay";
-    };
-
 //  physical_layout0: physical_layout_0 {
 //         compatible = "zmk,physical-layout";
 //         display-name = "quartz58_left";
@@ -87,4 +83,8 @@
 //             , <&key_physical_attrs 100 100  400  400       0     0     0>
 //             , <&key_physical_attrs 100 100  500  400       0     0     0>
 //             ;
+};
+
+&tps65_input {
+    status = "okay";
 };
