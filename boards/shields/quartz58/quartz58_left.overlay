@@ -96,5 +96,5 @@
 
 &tps65_input {
     status = "okay";
-    input-processors = <&trackpad_xy_scaler 1 16>;
+    input-processors = <&trackpad_xy_scaler 1 4>;
 };
